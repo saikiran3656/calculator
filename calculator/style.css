@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-image: linear-gradient(to right,rgb(65, 64, 64),rgb(121, 132, 121));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 4%;
+}
+
+.cal{
+    width: 90%;
+    max-width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(to right,rgba(12, 12, 12, 0.233),rgba(3, 3, 3, 0.11));
+    /* background: rgba(80, 75, 75, 0.651); */
+    box-shadow: 0 8px 32px 0 rgba(60, 60, 61, 0.37);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 10px;
+    border: 1.5px solid rgba(186, 184, 184, 0.502);
+}
+
+.div1,.div2,.div3,.div4,.div5{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1px;
+    align-items: center;
+}
+
+input[type="button"]{
+    width: 110px;
+    height: 50px;
+    padding: 10px;
+    margin: 1.5px;
+    /* margin: 5px; */
+    /* border-radius: 2px;
+    /* transition: 3s; */
+    cursor: pointer;
+    border: none;
+    background-color: rgba(200, 199, 199, 0.993);
+    
+}
+
+input[type="button"]:hover{
+    background-color: rgba(88, 87, 87, 0);
+    color: rgba(244, 242, 242, 0.432);
+    border: .05px solid white;
+}
+
+#ac{
+    background-color: rgba(255, 0, 0, 0.717);
+    color: black;
+}
+
+input[type="text"]{
+    width: 93%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    margin-left: 2px;
+}
+
+#del{
+    color: rgb(2, 91, 20);
+}
+
+#del:hover{
+    color: rgba(244, 242, 242, 0.432);
+}
+#del1{
+    background-color: rgb(255, 166, 0);
+    color: black;
+}
+
+#del2{
+    color: red;
+}

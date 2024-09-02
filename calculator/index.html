@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cal">
+        <div class="calculator">
+            <input type="text" id="result" value="0" disabled>
+            <!-- <br> -->
+            <div class="div1">
+                <input class="text" id="ac" type="button" value="AC" onclick="clearResult()">
+                <input class="text1" id="del2" type="button" value="DEL" onclick="del()">
+                <input class="text1" id="del" type="button" value="%" onclick="appendOperator('%')">
+                <input class="text1" id="del" type="button" value="/" onclick="appendOperator('/')">
+                
+            </div>
+            
+            <!-- <br> -->
+            <div class="div2">
+                <input type="button" value="7" onclick="appendNumber(7)">
+                <input type="button" value="8" onclick="appendNumber(8)">
+                <input type="button" value="9" onclick="appendNumber(9)">
+                <input class="text1" id="del" type="button" value="*" onclick="appendOperator('*')">
+            </div>
+            
+            <!-- <br> -->
+            <div class="div3">
+                <input type="button" value="4" onclick="appendNumber(4)">
+                <input type="button" value="5" onclick="appendNumber(5)">
+                <input type="button" value="6" onclick="appendNumber(6)">
+                <input class="text1" id="del" type="button" value="-" onclick="appendOperator('-')">
+            </div>
+            
+            <!-- <br> -->
+            <div class="div4">
+                <input type="button" value="1" onclick="appendNumber(1)">
+                <input type="button" value="2" onclick="appendNumber(2)">
+                <input type="button" value="3" onclick="appendNumber(3)">
+                <input class="text1" id="del" type="button" value="+" onclick="appendOperator('+')">
+            </div>
+
+            <div class="div5">
+                <input type="button" value="00" onclick="appendNumber('00')">
+                <input type="button" value="0" onclick="appendNumber(0)">
+                <input type="button" value="." onclick="appendNumber('.')">
+                <input type="button"  id="del1" value="=" onclick="calculate()">
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentResult = "";
+    
+        function appendNumber(num) {
+            currentResult += num;
+            document.getElementById('result').value = currentResult;
+        }
+    
+        function appendOperator(operator) {
+            currentResult += operator;
+            document.getElementById('result').value = currentResult;
+        }
+    
+        function clearResult() {
+            currentResult = "";
+            document.getElementById('result').value = currentResult;
+        }
+    
+        function calculate() {
+            try {
+                let result = eval(currentResult);
+                document.getElementById('result').value = result;
+                currentResult = result.toString();
+            } catch (error) {
+                document.getElementById('result').value = 'Error';
+                currentResult = "";
+            }
+        }
+        function del(){
+            currentResult = currentResult.substring(0, currentResult.length - 1);
+            document.getElementById('result').value = currentResult;
+        }
+    </script>
+    
+</body>
+</html>
